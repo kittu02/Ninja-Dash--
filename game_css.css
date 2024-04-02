@@ -1,19 +1,21 @@
 body{
     /* text-align: center; */
-    background-color: darkslategrey;
+    background-color: black;
     overflow: auto;
 }
 
 .gameName{
-    height: 100px;
+    height: 20%;
     width: 100%;
     background-color: white;
     text-align: center;
+    border: 5px groove white;
 }
 
 #board {
     /* background-color: green; */
     background-image: url("img/jungle-3.jpg");
+    border: 5px groove green;
 }
 
 #container{
@@ -27,8 +29,9 @@ body{
     background-color: darkblue;
     padding: 10px;
     display: inline-block;
-    margin: 5px;
-    font-size: xx-large;
+    /* margin: 5px; */
+    font-size: xxx-large;
+    font-weight: bolder;
     text-align: center;
     font-family: Bradley Hand, cursive;
     border: 5px groove rgb(0, 0, 255);
@@ -40,8 +43,9 @@ body{
     background-color: darkblue;
     padding: 10px;
     display: inline-block;
-    margin: 5px;
-    font-size: xx-large;
+    /* margin: 5px; */
+    font-size: xxx-large;
+    font-weight: bolder;
     text-align: center;
     font-family: Bradley Hand, cursive;
     border: 5px groove rgb(0, 0, 255);

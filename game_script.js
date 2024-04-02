@@ -15,8 +15,8 @@ let leftImg;
 // physics
 let velocityX = 0;
 let velocityY = 0; //ninja jump speed
-let initialVelpcityY = -8; // starting velocity
-let gravity = 0.5;
+let initialVelpcityY = -7; // starting velocity
+let gravity = 0.4;
 
 // platforms
 let platformArray = [];
@@ -68,8 +68,13 @@ window.onload = function() {
 
 function update(){
   requestAnimationFrame(update);
-  
+  if(score>5000){
+    initialVelpcityY++;
+    gravity += 0.1;
+  }
   if(gameOver){
+    initialVelpcityY--;
+    gravity -= 0.1;
     return;
   }
   context.clearRect(0,0,board.width,board.height);
@@ -121,7 +126,7 @@ function update(){
       {highScore = score;}
     document.getElementById("high-score").innerHTML = highScore;
     context.fillStyle = 'White';
-    context.fillText("Game Over: Press 'Space' to Restart",boardW/7,boardH*7/8);
+    context.fillText("Game Over\nPress 'Space' to Restart",boardW/7,boardH*7/8);
     maxScore = score;
   }
 }

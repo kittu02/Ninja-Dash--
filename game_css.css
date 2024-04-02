@@ -1,8 +1,65 @@
 body{
+    /* text-align: center; */
+    background-color: darkslategrey;
+    overflow: auto;
+}
+
+.gameName{
+    height: 100px;
+    width: 100%;
+    background-color: white;
     text-align: center;
 }
 
 #board {
     /* background-color: green; */
-    background-image: url("img/night-sky.png");
+    background-image: url("img/jungle-3.jpg");
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+}
+#title{
+    width: 90%;
+    height: 90; 
+    color: lawngreen;
+    background-color: darkblue;
+    padding: 10px;
+    display: inline-block;
+    margin: 5px;
+    font-size: xx-large;
+    text-align: center;
+    font-family: Bradley Hand, cursive;
+    border: 5px groove rgb(0, 0, 255);
+}
+#score{
+    width: 90%;
+    height: 90;
+    color: lawngreen;
+    background-color: darkblue;
+    padding: 10px;
+    display: inline-block;
+    margin: 5px;
+    font-size: xx-large;
+    text-align: center;
+    font-family: Bradley Hand, cursive;
+    border: 5px groove rgb(0, 0, 255);
+}
+#cscore{
+
+    margin-top: 50%;
+    background-color: darkblue;
+}
+#current-score{
+    display: inline-block;
+    background-color: darkblue;
+}
+#high-score{
+    display: inline-block;
+    background-color: darkblue;
+}
+#hscore{
+    margin-top: 50%;
+    background-color: darkblue;
 }

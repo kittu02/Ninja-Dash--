@@ -38,6 +38,7 @@ let ninja = {
   width : ninjaW,
   height : ninjaH
 }
+
 window.onload = function() {
   board = document.getElementById("board");
   board.height = boardH;
@@ -161,7 +162,6 @@ function moveninja(e){
     placePlatforms();
   }
 }
-
 
 function placePlatforms(){
   platformArray = [];

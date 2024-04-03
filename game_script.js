@@ -209,9 +209,9 @@ function newPlatform(){
     width : platformW,
     height : platformH 
   }
-
   platformArray.push(platform);
 }
+
 function detectCollision(a,b){
   return a.x < b.x + b.width && //a's top left corner doesn't reach b's top right corner
     a.x + a.width > b.x && // a's top right corner passes b's top left corner

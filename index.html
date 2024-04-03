@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to the Game!</title>
+  <style>
+    body {
+      background-image: url("img/title.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin: 0;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 10vh;
+    }
+    #start-button{
+        height: 80px;
+            width: 180px;
+            color: white;
+            background-color: green;
+            border: 5px solid black;
+            border-radius: 30px;
+            box-shadow: 0px 5px black;
+        margin-top: 40%;
+    }
+    #start-button:hover{
+        height: 80px;
+            width: 180px;
+            color: green;
+            background-color: rgb(0, 255, 38);
+            border: 5px solid black;
+            border-radius: 30px;
+            transition: 100ms;
+        }
+        
+        #start-button:active{
+            transform: translateY(3px);
+            box-shadow: 0px 1px black;
+        }
+  </style>
+</head>
+<body>
+  <button id="start-button">Start Game</button>
+  <script>
+    const startButton = document.getElementById("start-button");
+
+    startButton.addEventListener("click", () => {
+      window.location.href = "main_game.html";
+    });
+  </script>
+</body>
+</html>

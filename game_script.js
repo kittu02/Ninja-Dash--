@@ -24,7 +24,8 @@ let platformW = 50;
 let platformH = 18 ;
 let platformImg;
 let gameOver= false;
-
+var jump = document.getElementById("jumpSound");
+        
 // score
 let score = 0;
 let maxScore = 0;
@@ -70,11 +71,13 @@ function update(){
   requestAnimationFrame(update);
   if(score>5000){
     initialVelpcityY++;
-    gravity += 0.1;
+    // gravity += 0.1;
   }
   if(gameOver){
-    initialVelpcityY--;
-    gravity -= 0.1;
+    if(score>5000){
+      initialVelpcityY--;
+      // gravity -= 0.1;
+    }
     return;
   }
   context.clearRect(0,0,board.width,board.height);
@@ -103,6 +106,7 @@ function update(){
     
     if(detectCollision(ninja,platform) && velocityY >= 0){
       velocityY = initialVelpcityY; //jump
+      jumpSound.play();
     }
     context.drawImage(platform.img, platform.x, platform.y, platform.width, platform.height);
   }

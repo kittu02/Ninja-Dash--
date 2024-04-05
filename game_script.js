@@ -70,15 +70,15 @@ window.onload = function() {
 
 function update(){
   requestAnimationFrame(update);
-  if(score>5000){
-    initialVelpcityY++;
-    // gravity += 0.1;
-  }
+  // if(score>5000){
+  //   initialVelpcityY++;
+  //   // gravity += 0.1;
+  // }
   if(gameOver){
-    if(score>5000){
-      initialVelpcityY--;
-      // gravity -= 0.1;
-    }
+    // if(score>5000){
+    //   initialVelpcityY--;
+    //   // gravity -= 0.1;
+    // }
     return;
   }
   context.clearRect(0,0,board.width,board.height);
@@ -105,7 +105,7 @@ function update(){
     }
 
     
-    if(detectCollision(ninja,platform) && velocityY >= 0){
+    if(detectCollision(ninja,platform) && velocityY > 0){
       velocityY = initialVelpcityY; //jump
       jumpSound.play();
     }
@@ -187,7 +187,7 @@ function placePlatforms(){
 
   // platformArray.push(platform);
   for ( let i = 0; i<6; i++){
-    let randomX = Math.floor(Math.random()* boardW*3/4); //(0-1)* boardW*3/4
+    let randomX = Math.floor(Math.random()* boardW*3/4); //random value generated (0-1)* boardW*3/4
     let platform = {
       img : platformImg,
       x : randomX,
@@ -201,7 +201,7 @@ function placePlatforms(){
 }
 
 function newPlatform(){
-  let randomX = Math.floor(Math.random()* boardW*3/4); //(0-1)* boardW*3/4
+  let randomX = Math.floor(Math.random()* boardW*3/4); // random value generated (0-1)* boardW*3/4
   let platform = {
     img : platformImg,
     x : randomX,
@@ -220,11 +220,14 @@ function detectCollision(a,b){
 }
 
 function updateScore(){
-  let points = Math.floor(50*Math.random()); //(0-1)*50 --> (0-50)
+  let points = Math.floor(50*Math.random()); //random value generated (0-1)*50 --> (0-50)
   if(velocityY < 0 ){  //going up
     maxScore += points;
     if(score < maxScore){
       score = maxScore;
+    }
+    else if(velocityY >= 0){
+      maxScore -= points;
     }
   }
   else if(velocityY >= 0){

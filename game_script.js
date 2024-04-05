@@ -114,15 +114,14 @@ function update(){
 
   // clear platforms and add new platforms
   while(platformArray.length > 0 && platformArray[0].y>=boardH){
-    platformArray.shift(); // removes first element from array
-    newPlatform(); //replace with new platform on the top
+    platformArray.shift(); 
+    newPlatform(); 
   }
 
   // update score
   updateScore();
   context.fillStyle = "black";
   context.font = "16px sans-serif";
-  // context.fillText(score,5,20);
   document.getElementById("current-score").innerHTML = score;
   
 
@@ -137,11 +136,11 @@ function update(){
 }
 
 function moveninja(e){
-  if(e.code == "ArrowRight" || e.code == "KeyD"){ // move right
+  if(e.code == "ArrowRight" || e.code == "KeyD"){ 
     velocityX = 5;
     ninja.img= rightImg;
   }
-  else if(e.code == "ArrowLeft" || e.code == "KeyA"){ // move left
+  else if(e.code == "ArrowLeft" || e.code == "KeyA"){ 
     velocityX = -5;
     ninja.img = leftImg;
   }
@@ -213,10 +212,10 @@ function newPlatform(){
 }
 
 function detectCollision(a,b){
-  return a.x < b.x + b.width && //a's top left corner doesn't reach b's top right corner
-    a.x + a.width > b.x && // a's top right corner passes b's top left corner
-    a.y < b.y + b.height && // a's top left corner doesn't reach b's bottom left corner
-    a.y + a.height > b.y; // a's bottom left corner passes b's top left corner
+  return a.x < b.x + b.width && //a's top left edge doesn't reach b's top right edge
+    a.x + a.width > b.x && // a's top right edge passes b's top left edge
+    a.y < b.y + b.height && // a's top left edge doesn't reach b's bottom left edge
+    a.y + a.height > b.y; // a's bottom left edge passes b's top left edge
 }
 
 function updateScore(){
@@ -226,7 +225,7 @@ function updateScore(){
     if(score < maxScore){
       score = maxScore;
     }
-    else if(velocityY >= 0){
+    else if(velocityY >= 0){ 
       maxScore -= points;
     }
   }

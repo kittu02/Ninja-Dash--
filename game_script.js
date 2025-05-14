@@ -20,7 +20,7 @@ let gravity = 0.4;
 
 // platforms
 let platformArray = [];
-let platformW = 50;
+let platformW = 60;
 let platformH = 18 ;
 let platformImg;
 let gameOver= false;
